@@ -9,8 +9,10 @@ namespace SQL.Application.Person
 {
     internal interface IPerson
     {
-        Task<PersonEntity> Get(string name);
+        Task<PersonEntity> GetByName(string name);
         Task<IEnumerable<PersonEntity>> GetAll();
         Task<int> Insert(PersonEntity entity);
+        Task<int> Update(PersonEntity entity);
+        Task<int> Delete(int id);
     }
 }

@@ -13,5 +13,7 @@ namespace SQL.Application.Person.Model
         public int PersonId { get; set; }
         public string? Name { get; set; }
         public string? LastName { get; set; }
+        public string? PostCode { get; set; }
+        public string? CityName { get; set; }
     }
 }

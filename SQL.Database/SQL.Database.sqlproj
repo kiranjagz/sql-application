@@ -59,7 +59,11 @@
     <Folder Include="StoreProcedures" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="StoreProcedures\SP_Insert_Person.sql" />
-    <Build Include="StoreProcedures\SP_Select_All_Persons.sql" />
+    <None Include="StoreProcedures\SP_Insert_Person.sql" />
+    <None Include="StoreProcedures\SP_Select_All_Persons.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StoreProcedures\SP_Delete_Person.sql" />
+    <Build Include="StoreProcedures\SP_Select_Person_By_Name.sql" />
   </ItemGroup>
 </Project>
