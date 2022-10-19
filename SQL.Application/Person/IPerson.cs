@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SQL.Application.Person
 {
-    internal interface IPerson
+    public interface IPerson
     {
         Task<PersonEntity> GetByName(string name);
         Task<IEnumerable<PersonEntity>> GetAll();

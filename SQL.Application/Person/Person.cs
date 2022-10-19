@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace SQL.Application.Person
 {
-    internal class Person : IPerson
+    public class Person : IPerson
     {
         private IDbConnection _dbConnection;
 

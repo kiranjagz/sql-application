@@ -1,39 +1,39 @@
 ﻿using SQL.Application.Person.Model;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using SQL.Application.Person;
+using SQL.Application.Service;
 
-namespace SQL.Application
+using IHost host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices((_, services) =>
+        services
+        .AddSingleton<IPerson, Person>()
+        .AddSingleton<IPersonService, PersonService>())
+    .Build();
+
+Run(host.Services, "scope 1");
+PrintWord("Kiran");
+
+await host.RunAsync();
+
+static void Run(IServiceProvider services, string scope)
 {
-    internal class Program
+    using IServiceScope serviceScope = services.CreateScope();
+    IServiceProvider provider = serviceScope.ServiceProvider;
+
+    var peronService = provider.GetRequiredService<IPersonService>();
+    Console.WriteLine($"{scope}-Call 1 .GetRequiredService<IPersonService>()");
+
+    peronService.InsertPerson(new PersonEntity
     {
-        static async Task Main(string[] args)
-        {
-            var person = new Person.Person();
+        Name = "Todd",
+        LastName = "Malone",
+        CityName = "New York",
+        PostCode = "10801"
+    });
+}
 
-            var newPerson = new PersonEntity
-            {
-                Name = "Michael",
-                LastName = "Bunby",
-                PostCode = "7776",
-                CityName = "New York"
-            };
-
-            var result = await person.GetAll();
-
-            var hasSaved = await person.Insert(newPerson);
-
-            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(result, Newtonsoft.Json.Formatting.Indented));
-            Console.WriteLine(hasSaved.ToString());
-
-            var id = result.LastOrDefault();
-
-            if (id != null)
-            {
-                var hasDeleted = await person.Delete(id.PersonId);
-
-                Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(await person.GetAll(), Newtonsoft.Json.Formatting.Indented));
-                Console.WriteLine(hasDeleted.ToString());
-            }
-
-            Console.ReadLine();
-        }
-    }
+static void PrintWord(string word)
+{
+    Console.WriteLine($"Hello {word}");
 }

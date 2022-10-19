@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SQL.Application.Person.Model
 {
-    internal class PersonEntity
+    public class PersonEntity
     {
         [Key]
         public int PersonId { get; set; }
