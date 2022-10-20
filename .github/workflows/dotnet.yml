@@ -20,6 +20,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build SQL.Application/SQL.Application.csproj
-    #- name: Test
-    #  run: dotnet test --no-build --verbosity normal
+      run: dotnet build src/SQL.Application/SQL.Application.csproj
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
