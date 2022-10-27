@@ -3,18 +3,20 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SQL.Application.Person;
 using SQL.Application.Service;
+using SQL.Application.RockPaperScissorGame;
 
 using IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((_, services) =>
         services
         .AddSingleton<IPerson, Person>()
-        .AddSingleton<IPersonService, PersonService>())
+        .AddSingleton<IPersonService, PersonService>()
+        .AddSingleton<IGame, Game>())
     .Build();
 
-Run(host.Services, "scope 1");
-PrintWord("Kiran");
+//Run(host.Services, "scope 1");
+RockPaperScissors(host.Services);
 
-await host.RunAsync();
+//await host.RunAsync();
 
 static void Run(IServiceProvider services, string scope)
 {
@@ -33,7 +35,11 @@ static void Run(IServiceProvider services, string scope)
     });
 }
 
-static void PrintWord(string word)
+static void RockPaperScissors(IServiceProvider services)
 {
-    Console.WriteLine($"Hello {word}");
+    using IServiceScope serviceScope = services.CreateScope();
+    IServiceProvider provider = serviceScope.ServiceProvider;
+
+    var game = provider.GetRequiredService<IGame>();
+    game.Play();
 }
