@@ -3,14 +3,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SQL.Application.Person;
 using SQL.Application.Service;
-using SQL.Application.RockPaperScissorGame;
 
 using IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((_, services) =>
         services
         .AddSingleton<IPerson, Person>()
-        .AddSingleton<IPersonService, PersonService>()
-        .AddSingleton<IGame, Game>())
+        .AddSingleton<IPersonService, PersonService>())
     .Build();
 
 Run(host.Services, "scope 1");

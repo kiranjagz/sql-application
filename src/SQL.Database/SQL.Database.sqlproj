@@ -58,10 +58,12 @@
     <Folder Include="Properties" />
     <Folder Include="StoreProcedures" />
     <Folder Include="Examples" />
+    <Folder Include="Examples\Concat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_insertperson.sql" />
     <None Include="StoreProcedures\sp_selectallpersons.sql" />
+    <None Include="Examples\Concat\concat-example.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_deleteperson.sql" />
