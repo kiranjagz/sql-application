@@ -57,13 +57,13 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="StoreProcedures" />
+    <Folder Include="Examples" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="StoreProcedures\SP_Insert_Person.sql" />
-    <None Include="StoreProcedures\SP_Select_All_Persons.sql" />
+    <None Include="StoreProcedures\sp_insertperson.sql" />
+    <None Include="StoreProcedures\sp_selectallpersons.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="StoreProcedures\SP_Delete_Person.sql" />
-    <Build Include="StoreProcedures\SP_Select_Person_By_Name.sql" />
+    <None Include="StoreProcedures\sp_deleteperson.sql" />
   </ItemGroup>
 </Project>

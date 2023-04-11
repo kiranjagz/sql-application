@@ -1,6 +1,6 @@
 ﻿USE [World]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Delete_Person]    Script Date: 2022/10/17 20:36:47 ******/
+/****** Object:  StoredProcedure [dbo].[sp_deleteperson]    Script Date: 2022/10/17 20:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10,7 +10,7 @@ GO
 -- Create date: 17th October 2022
 -- Description:	Delete person and address
 -- =============================================
-ALTER PROCEDURE [dbo].[SP_Delete_Person]
+ALTER PROCEDURE [dbo].[sp_deleteperson]
 	@Id int,
 	@Msg NVARCHAR(MAX)=null OUTPUT
 AS

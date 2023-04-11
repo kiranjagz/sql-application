@@ -13,9 +13,7 @@ using IHost host = Host.CreateDefaultBuilder(args)
         .AddSingleton<IGame, Game>())
     .Build();
 
-//Run(host.Services, "scope 1");
-RockPaperScissors(host.Services);
-
+Run(host.Services, "scope 1");
 //await host.RunAsync();
 
 static void Run(IServiceProvider services, string scope)
@@ -33,13 +31,4 @@ static void Run(IServiceProvider services, string scope)
         CityName = "New York",
         PostCode = "10801"
     });
-}
-
-static void RockPaperScissors(IServiceProvider services)
-{
-    using IServiceScope serviceScope = services.CreateScope();
-    IServiceProvider provider = serviceScope.ServiceProvider;
-
-    var game = provider.GetRequiredService<IGame>();
-    game.Play();
 }

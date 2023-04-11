@@ -25,7 +25,7 @@ namespace SQL.Application.Person
             _dbConnection.Open();
 
             var personEntity = (await _dbConnection
-                .QueryAsync<PersonEntity>("SP_Select_Person_By_Name",
+                .QueryAsync<PersonEntity>("sp_selectpersonbyname",
                 new { Name = name },
                 commandType: CommandType.StoredProcedure)).SingleOrDefault();
 
@@ -39,7 +39,7 @@ namespace SQL.Application.Person
             _dbConnection.Open();
 
             var personEntity = (await _dbConnection
-                .QueryAsync<PersonEntity>("SP_Select_All_Persons",
+                .QueryAsync<PersonEntity>("sp_selectallpersons",
                 commandType: CommandType.StoredProcedure))
                 .ToList();
 
@@ -52,8 +52,6 @@ namespace SQL.Application.Person
         {
             _dbConnection.Open();
 
-            var parameters = new PersonEntity { Name = entity.Name, LastName = entity.LastName };
-
             var a = new
             {
                 Name = entity.Name,
@@ -62,7 +60,7 @@ namespace SQL.Application.Person
                 CityName = entity.CityName
             };
 
-            var personEntity = (await _dbConnection.ExecuteAsync("SP_Insert_Person", a, commandType: CommandType.StoredProcedure));
+            var personEntity = (await _dbConnection.ExecuteAsync("sp_insertperson", a, commandType: CommandType.StoredProcedure));
 
             _dbConnection.Close();
 
@@ -83,7 +81,7 @@ namespace SQL.Application.Person
                 Id = id
             };
 
-            var returnCode = (await _dbConnection.ExecuteAsync("SP_Delete_Person", a, commandType: CommandType.StoredProcedure));
+            var returnCode = (await _dbConnection.ExecuteAsync("sp_deleteperson", a, commandType: CommandType.StoredProcedure));
 
             _dbConnection.Close();
 
