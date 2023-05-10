@@ -62,6 +62,7 @@
     <Folder Include="Examples\In" />
     <Folder Include="Examples\OrderBy" />
     <Folder Include="Examples\GroupBy" />
+    <Folder Include="Examples\Subquery" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_insertperson.sql" />
@@ -70,6 +71,7 @@
     <None Include="Examples\In\in-example.sql" />
     <None Include="Examples\OrderBy\orderby-offset.sql" />
     <None Include="Examples\GroupBy\groupby.sql" />
+    <None Include="Examples\Subquery\subquery-example1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_deleteperson.sql" />
