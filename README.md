@@ -4,10 +4,9 @@
 
 Just trying to remember some sql stuff from back in the day.
 
-- Insert
-- Update
-- Delete
-- Select
+# Contributors
+
+- Kiran Jagathal (Owner) :sunglasses:
 
 ## License
 
