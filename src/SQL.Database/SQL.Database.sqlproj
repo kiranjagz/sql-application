@@ -78,6 +78,7 @@
     <None Include="Examples\Like\underscore.sql" />
     <None Include="Examples\Like\escaping.sql" />
     <None Include="Examples\Subquery\subquery-example-2.sql" />
+    <None Include="Examples\Subquery\subquery-example-3-with-inline-expression.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_deleteperson.sql" />
