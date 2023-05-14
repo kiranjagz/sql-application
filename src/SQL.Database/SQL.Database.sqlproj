@@ -63,6 +63,7 @@
     <Folder Include="Examples\OrderBy" />
     <Folder Include="Examples\GroupBy" />
     <Folder Include="Examples\Subquery" />
+    <Folder Include="Examples\Like" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_insertperson.sql" />
@@ -73,6 +74,7 @@
     <None Include="Examples\GroupBy\groupby.sql" />
     <None Include="Examples\Subquery\subquery-example-1.sql" />
     <None Include="Examples\GroupBy\group-by-example-2.sql" />
+    <None Include="Examples\Like\negation-char.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_deleteperson.sql" />
