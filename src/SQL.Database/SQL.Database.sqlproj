@@ -77,6 +77,7 @@
     <None Include="Examples\Like\negation-char.sql" />
     <None Include="Examples\Like\underscore.sql" />
     <None Include="Examples\Like\escaping.sql" />
+    <None Include="Examples\Subquery\subquery-example-2.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_deleteperson.sql" />
