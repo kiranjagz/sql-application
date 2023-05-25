@@ -64,6 +64,7 @@
     <Folder Include="Examples\GroupBy" />
     <Folder Include="Examples\Subquery" />
     <Folder Include="Examples\Like" />
+    <Folder Include="Examples\Strings" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_insertperson.sql" />
@@ -79,6 +80,7 @@
     <None Include="Examples\Like\escaping.sql" />
     <None Include="Examples\Subquery\subquery-example-2.sql" />
     <None Include="Examples\Subquery\subquery-example-3-with-inline-expression.sql" />
+    <None Include="Examples\Strings\char-index.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StoreProcedures\sp_deleteperson.sql" />
